@@ -4,4 +4,9 @@ class ArticlesController < ActionController::Base
         @artigo = Article.find(params[:id])
     end
 
+    def index
+        @artigos = Article.all
+        
+    end
+
 end
