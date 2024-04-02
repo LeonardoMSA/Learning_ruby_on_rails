@@ -1,4 +1,8 @@
 <h1>Detalhes do Artigo:</h1>
 
-<h2><strong>Título: </strong><%= @artigo.title %></h2>
-<h3><strong>Descrição: </strong><%= @artigo.description %></h3>
+<h2><strong>Título: </strong><%= @article.title %></h2>
+<h3><strong>Descrição: </strong><%= @article.description %></h3>
+
+<%= link_to 'edit', edit_article_path(@article) %>  |  
+<%= link_to 'Back to articles', articles_path %>  |  
+<%= button_to 'delete', article_path(@article), method: :delete, data: {confirm: "Certeza?"} %>

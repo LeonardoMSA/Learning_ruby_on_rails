@@ -5,17 +5,22 @@
         <tr>
             <th>Título</th>
             <th>Descrição</th>
-            <th>Ações</th>
+            <th colspan="6">Ações</th>
         </tr>
     </thead>
 
     <tbody>
-        <% @artigos.each do |artigo| %>
+        <% @articles.each do |article| %>
             <tr>
-                <td><%= artigo.title %></td>
-                <td><%= artigo.description %></td>
-                <td>Placeholder</td>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td><%= link_to 'show', article_path(article) %></td>
+                <td><%= link_to 'edit', edit_article_path(article) %></td>
+                <td><%= button_to 'delete', article_path(article), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
+<p>
+    <%= link_to 'Create new', new_article_path %>
+</p>
